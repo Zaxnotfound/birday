@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="BirthdayStyle.css"> 
+    <title>Birthday Card Ni Pol</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-wrapper" id="envelope">
+            <div class="envelope">
+                <div class="flap"></div>
+                <div class="front"></div>
+                
+                <div class="letter">
+                    <div class="card-title"><h1>HAPPEHH BIRTHDAY BOY</h1></div>
+                    <p>Dear Nick,</p>
+                    <p>
+                        Since wala ako mabibigay sayo physically kasi di naman ako pupunta sa birthday mo HAHAHHAH, eto nalang bibigay ko sayo, digital birthday card. 
+                        Sana magustuhan mo kahit di tayo nagkita sa birthday mo boy.
+                    </p>
+                    <p class="signature">Pol</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const envelope = document.getElementById('envelope');
+        
+        envelope.addEventListener('click', () => {
+
+            envelope.classList.toggle('open');
+            
+    
+            if (envelope.classList.contains('open')) {
+                setTimeout(() => {
+                    // Unang sabog sa kaliwa
+                    confetti({
+                        particleCount: 100,
+                        spread: 70,
+                        origin: { x: 0.2, y: 0.8 } 
+                    });
+                    
+                    // Sabog sa kanan
+                    confetti({
+                        particleCount: 100,
+                        spread: 70,
+                        origin: { x: 0.8, y: 0.8 }
+                    });
+                }, 400);
+            }
+        });
+    </script>
+</body>
+</html>
